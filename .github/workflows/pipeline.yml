@@ -16,7 +16,7 @@ env:
 
 jobs:
 
-  Lint:
+  Lint-Master:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -33,7 +33,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false  # to lint only the new code
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # To report GitHub Actions status checks
 
-  Repo-Scan:
+  Scan-Repo:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -84,7 +84,7 @@ jobs:
       #       report.txt
 
   Build-Push-Image:
-    needs: [Lint, Repo-Scan, Unit-Tests]
+    needs: [Lint-Master, Scan-Repo, Unit-Tests]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -136,7 +136,7 @@ jobs:
         category: trivy-image-scan
 
   Sign-Image:
-    needs: [Image-Scan]
+    needs: [Scan-Image]
     runs-on: ubuntu-latest
     permissions:
       packages: write
