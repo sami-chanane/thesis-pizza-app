@@ -1,6 +1,8 @@
 kubernetes/pizza-service.yaml
 kubernetes/cosign.pub
 kubernetes/verify-signature.yaml
+kubernetes/ingress.yaml
+kubernetes-ingress
 pre-commit
 report.txt
 coverage.out
