@@ -33,7 +33,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false  # to lint only the new code
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # To report GitHub Actions status checks
 
-  Scan-Repo:
+  Repo-Scan:
     runs-on: ubuntu-latest
     permissions:
       contents: read
