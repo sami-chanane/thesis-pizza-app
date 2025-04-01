@@ -16,7 +16,7 @@ env:
 
 jobs:
 
-  Lint-Master:
+  Lint:
     runs-on: ubuntu-latest
     permissions:
       contents: read
